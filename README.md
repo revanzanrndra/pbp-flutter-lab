@@ -15,11 +15,11 @@ Secara fungsi, `const` dan `final` tidak memiliki perbedaan, keduanya sama-sama 
 
 # Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas!
 
-1. Membuat sebuah program Flutter baru dengan nama `counter_7`.
+1. **Membuat sebuah program Flutter baru dengan nama `counter_7`.**
 
     Pada *root directory*, program Flutter di-*generate* di cmd dengan perintah `flutter create counter_7`.
 
-2. Mengubah tampilan program menjadi seperti berikut.
+2. **Mengubah tampilan program menjadi seperti berikut.**
 
     <img src="tampilanTugas7PBP.png">
 
@@ -65,9 +65,9 @@ Secara fungsi, `const` dan `final` tidak memiliki perbedaan, keduanya sama-sama 
     ```
     Lalu memasukkan `Row` yang sebelumnya saya buat ke dalam *child*-nya.
     
-3. Mengimplementasikan logika berikut pada program.
+3. **Mengimplementasikan logika berikut pada program.**
 
-    - Tombol + menambahkan angka sebanyak satu satuan.
+    - **Tombol + menambahkan angka sebanyak satu satuan.**
 
         Dari potongan kode yang saya masukkan di poin ke-2 di atas, terlihat bahwa tombol *increment* akan memanggil fungsi `_incrementCounter` saat diklik. Berikut kode dari fungsi tersebut:
         ```
@@ -82,7 +82,7 @@ Secara fungsi, `const` dan `final` tidak memiliki perbedaan, keduanya sama-sama 
         ```
         Sederhana saja, kode tersebut akan meng-*increment* variabel `_counter`.
 
-    - Tombol - mengurangi angka sebanyak satu satuan. Apabila counter bernilai 0, maka tombol - tidak memiliki efek apapun pada counter.
+    - **Tombol - mengurangi angka sebanyak satu satuan. Apabila counter bernilai 0, maka tombol - tidak memiliki efek apapun pada counter.**
 
         Dari potongan kode yang saya masukkan di poin ke-2 di atas, terlihat bahwa tombol *decrement* akan memanggil fungsi `_decrementCounter` saat diklik. Berikut kode dari fungsi tersebut:
         ```
@@ -95,8 +95,8 @@ Secara fungsi, `const` dan `final` tidak memiliki perbedaan, keduanya sama-sama 
         ```
         Program akan mengecek terlebih dahulu, apakah `_counter` kurang dari sama dengan 0 atau tidak, jika iya, maka `_counter` tetap bernilai 0, jika tidak, maka `_counter` akan di-*decrement*.
     
-    - Apabila counter bernilai ganjil, maka teks indikator berubah menjadi "GANJIL" dengan warna biru dan apabila counter bernilai genap, maka teks indikator berubah menjadi "GENAP" dengan warna merah.
-    
+    - **Apabila counter bernilai ganjil, maka teks indikator berubah menjadi "GANJIL" dengan warna biru dan apabila counter bernilai genap, maka teks indikator berubah menjadi "GENAP" dengan warna merah.**
+
         Dari *method* `_decrementCounter()` dan `_incrementCounter()`, terdapat potongan kode `_kata = _oddEven()`, artinya variabel `_kata` ditentukan berdasarkan hasil return dari *method* `_oddEven()`, isi dari *method* ini adalah sebagai berikut,
         ```
         String _oddEven() {
