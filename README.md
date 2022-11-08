@@ -8,6 +8,16 @@ Kelas   : PBP A
 *Stateless widget* adalah widget yang *state*-nya tidak bisa diubah setelah diinisiasi, sementara *stateful widget* adalah widget yang *state*-nya bisa diubah setelah diinisiasi. Jadi, jika suatu widget bisa berubah saat ada interaksi *user*, maka widget tersebut bersifat *stateful*, sedangkan *stateless widget* tidak dapat bisa diubah.
 
 # Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya!
+Widget-widget yang saya gunakan pada proyek kali ini adalah:
+- **Scaffold**, widget utama untuk membuat halaman Flutter.
+- **Center**, menempatkan *child* di tengah *parent*.
+- **Column**, mengatur *list of children* untuk tersusun secara vertikal.
+- **Text**, menampilkan dan menghias sebuah teks.
+- **Padding**, menyisipkan *child* dengan ukuran *padding* yang diberikan.
+- **Row**, mengatur *list of children* untuk tersusun secara horizontal.
+- **Expanded**, mengembangkan *child* di dalamnya, dalam proyek ini `expanded` digunakan untuk memberi *space* antara tombol *decrement* dan *increment*.
+- **Container**, menampung *widget* umum seperti `painting`, `positioning`, dan `sizing`.
+- **Icon**, menampung material `icon`.
 
 # Apa fungsi dari `setState()`? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut!
 `setState()` berfungsi untuk memberi tahu *framework* bahwa terdapat perubahan *value* di dalam *state* yang memanggil fungsi `setState()`. Setelah *framework* mengetahui adanya perubahan, maka *framework* akan menjalankan ulang *build method* sehingga aplikasi dapat menampilkan ulang dengan *value* terbaru.
