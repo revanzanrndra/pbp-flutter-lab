@@ -4,6 +4,8 @@ NPM     : 2206025003
 
 Kelas   : PBP A
 
+
+# TUGAS 7
 # Apa yang dimaksud dengan *Stateless widget* dan *Stateful widget* dan jelaskan perbedaan dari keduanya!
 *Stateless widget* adalah widget yang *state*-nya tidak bisa diubah setelah diinisiasi, sementara *stateful widget* adalah widget yang *state*-nya bisa diubah setelah diinisiasi. Jadi, jika suatu widget bisa berubah saat ada interaksi *user*, maka widget tersebut bersifat *stateful*, sedangkan *stateless widget* tidak dapat bisa diubah.
 
@@ -116,3 +118,20 @@ Secara fungsi, `const` dan `final` tidak memiliki perbedaan, keduanya sama-sama 
         }
         ```
         Lalu, dari potongan kode yang saya masukkan di poin ke-2 di atas, terlihat pada *widget* `text` terdapat potongan kode ```style: TextStyle(color: _kata == "GANJIL" ? Colors.blue : Colors.red),```, dari sini terdapat logika *conditional* bahwa jika `_kata` sama dengan "GANJIL", maka kata akan dihias dengan warna biru, sedangkan jika "GENAP" akan dihias dengan warna merah.
+
+
+# TUGAS 8
+# Jelaskan perbedaan `Navigator.push` dan `Navigator.pushReplacement`!
+
+
+
+
+# Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya!
+
+
+
+# Sebutkan jenis-jenis *event* yang ada pada Flutter! (contoh: `onPressed`)
+
+# Jelaskan bagaimana cara kerja `Navigator` dalam "mengganti" halaman dari aplikasi Flutter!
+
+# Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas!

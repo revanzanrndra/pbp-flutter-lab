@@ -1,5 +1,6 @@
 import 'package:counter_7/main.dart';
-import 'package:counter_7/data.dart';
+import 'package:counter_7/page/data.dart';
+import 'package:counter_7/page/mywatchlist_page.dart';
 import 'package:flutter/material.dart';
 
 class MyFormPage extends StatefulWidget {
@@ -37,7 +38,8 @@ class _MyFormPageState extends State<MyFormPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0, top: 8),
+            padding: const EdgeInsets.only(
+                left: 15.0, right: 15.0, bottom: 15.0, top: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -84,6 +86,16 @@ class _MyFormPageState extends State<MyFormPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyDataPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('My Watch List'),
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyWatchlistPage()),
                 );
               },
             ),
@@ -187,21 +199,30 @@ class _MyFormPageState extends State<MyFormPage> {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: TextButton(
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                ),
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    listData.add(dataCard(_judul, _nominal, jenisBudget));
-                    _formKey.currentState!.reset();
-                  }
-                },
-                child: const Text(
-                  "Simpan",
-                  style: TextStyle(color: Colors.white),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 10),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                    width: 90,
+                    height: 40,
+                    child: TextButton(
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(Colors.blue),
+                      ),
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          listData.add(dataCard(_judul, _nominal, jenisBudget));
+                          _formKey.currentState!.reset();
+                        }
+                      },
+                      child: const Text(
+                        "Simpan",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
