@@ -122,16 +122,71 @@ Secara fungsi, `const` dan `final` tidak memiliki perbedaan, keduanya sama-sama 
 
 # TUGAS 8
 # Jelaskan perbedaan `Navigator.push` dan `Navigator.pushReplacement`!
-
-
-
+`Navigator.push` hanya akan menambahkan rute ke *page* yang di-*push* ke dalam *stack* Navigator, sedangkan `Navigator.pushReplacement` akan menambahkan rute dan juga menghilangkan rute sebelumnya.
 
 # Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya!
-
+Widget-widget yang saya gunakan pada proyek kali ini adalah:
+- **Scaffold**, widget utama untuk membuat halaman Flutter.
+- **Center**, menempatkan *child* di tengah *parent*.
+- **Column**, mengatur *list of children* untuk tersusun secara vertikal.
+- **Text**, menampilkan dan menghias sebuah teks.
+- **Padding**, menyisipkan *child* dengan ukuran *padding* yang diberikan.
+- **Row**, mengatur *list of children* untuk tersusun secara horizontal.
+- **Expanded**, mengembangkan *child* di dalamnya, dalam proyek ini `expanded` digunakan untuk memberi *space* antara tombol *decrement* dan *increment*.
+- **Container**, menampung *widget* umum seperti `painting`, `positioning`, dan `sizing`.
+- **Icon**, menampung material `icon`.
+- **Drawer**, Menampilkan rute navigasi pada sebuah panel di pinggir *body* aplikasi.
+- **ListTile**, Menampilkan elemen berbentuk sebuah baris yang dapat berisi `icon` dan `text`.
+- **Navigator**, Menavigasi ke *page* mana *user* ingin pergi.
+- **Card**, Panel persegi di mana kita bisa memasukkan elemen-elemen di dalamnya.
+- **SingleChildScrollView**, Supaya *child* di dalamnya dapat di-*scroll* dan mencegah *overflow*.
+- **TextFormField**, Melakukan input sebuah data ke dalam *text field*.
+- **TextButton**, Tombol dengan elemen teks di dalamnya.
+- **DropdownButton**, Tombol yang menampilkan data-data pada menu *dropdown*.
+- **Form**, Berisi *field-field* untuk melakukan input data.
 
 
 # Sebutkan jenis-jenis *event* yang ada pada Flutter! (contoh: `onPressed`)
+- `onPressed`: Fungsi akan dijalankkan saat sebuah tombol ditekan.
+- `onTap`: Fungsi akan dijalankkan saat sebuah *widget* yang bisa ditekan, ditekan.
+- `onSaved`: Fungsi akan dijalankan ketika sebuah `form` disimpan.
 
 # Jelaskan bagaimana cara kerja `Navigator` dalam "mengganti" halaman dari aplikasi Flutter!
+Cara kerja `Navigator` adalah dengan menggunakan *stack*. Halaman yang di-*push* akan berada di *top of stack*.
 
 # Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas!
+Cara saya mengimplementasikan *checklist* di atas adalah dengan membuat *form* pada *file* `form.dart`, pada *file* ini, saya memasukkan *input field* yang dibutuhkan. Lalu data-data yang sudah *user* masukkan akan di-*format* sedemikian rupa menjadi sebuah `Card`, `Card` yang sudah terbuat akan dimasukkan ke dalam `list` dengan tipe data `Widget` yang ada di *file* `data.dart`, kemudian `list` tersebut hanya perlu ditampilkan sebagai `children` dari *widget* `Column` pada `body`.
+
+# TUGAS 9
+# Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Bisa saja, tetapi dengan membuat model akan lebih memudahkan untuk dibaca dan identifikasi *bug*.
+
+# Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+Widget-widget yang saya gunakan pada proyek kali ini adalah:
+- **Scaffold**, widget utama untuk membuat halaman Flutter.
+- **Center**, menempatkan *child* di tengah *parent*.
+- **Column**, mengatur *list of children* untuk tersusun secara vertikal.
+- **Text**, menampilkan dan menghias sebuah teks.
+- **Padding**, menyisipkan *child* dengan ukuran *padding* yang diberikan.
+- **Row**, mengatur *list of children* untuk tersusun secara horizontal.
+- **Expanded**, mengembangkan *child* di dalamnya, dalam proyek ini `expanded` digunakan untuk memberi *space* antara tombol *decrement* dan *increment*.
+- **Container**, menampung *widget* umum seperti `painting`, `positioning`, dan `sizing`.
+- **Icon**, menampung material `icon`.
+- **Drawer**, Menampilkan rute navigasi pada sebuah panel di pinggir *body* aplikasi.
+- **ListTile**, Menampilkan elemen berbentuk sebuah baris yang dapat berisi `icon` dan `text`.
+- **Navigator**, Menavigasi ke *page* mana *user* ingin pergi.
+- **Card**, Panel persegi di mana kita bisa memasukkan elemen-elemen di dalamnya.
+- **SingleChildScrollView**, Supaya *child* di dalamnya dapat di-*scroll* dan mencegah *overflow*.
+- **TextFormField**, Melakukan input sebuah data ke dalam *text field*.
+- **TextButton**, Tombol dengan elemen teks di dalamnya.
+- **DropdownButton**, Tombol yang menampilkan data-data pada menu *dropdown*.
+- **Form**, Berisi *field-field* untuk melakukan input data.
+- **RichText**, Dapat berisi lebih dari satu teks dengan *style* yang berbeda.
+- **InkWell**, Panel yang mirip dengan `card` tetapi dapat diklik.
+- **FutureBuilder**, Membuat *widget* yang dapat *build* dirinya sendiri berdasarkan `Snapshot` terakhir dengan `Future`.
+
+# Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+*Widget* `FutureBuilder` memanggil fungsi `fetch`, dalam tugas ini memanggil fungsi `fetchMyWatchlist`. Dari pemanggilan fungsi tersebut, diambil data dari https://tugas2-revanza.herokuapp.com/mywatchlist/json, data yang diambil akan diubah menjadi objek dari class `MyWatchlist`. Setelah diubah menjadi objek baru datap ditampilkan pada halaman flutter.
+
+# Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+Pertama menambahkan dependensi HTTP, dan mengimpor *package-package* yang esensial. Lalu menyalin data JSON pada tugas mywatchlist sebelumnya, mengubah data menjadi model di Quicktype dan memasukkannya ke file pada direktori model.Lalu membuat class `MyWatchlistPage` yang dapat melakukan pengambilan data dari URL https://tugas2-revanza.herokuapp.com/mywatchlist/json. Selanjutnya hanya perlu menampilkan data dengan `FutureBuilder()` yang dipelajari pada lab8. Memodifikasi sedikit supaya data-data dapat diklik dan menavigasi ke page detail.
