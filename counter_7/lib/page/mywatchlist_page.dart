@@ -19,7 +19,7 @@ class MyWatchlistPage extends StatefulWidget {
 class _MyWatchlistPageState extends State<MyWatchlistPage> {
   Future<List<MyWatchlist>> fetchMyWatchlist() async {
     var url =
-        Uri.parse('https://tugas2-revanza.herokuapp.com/mywatchlist/json/');
+        Uri.parse('https://tugas2-revanza.herokuapp.com/mywatchlist/json');
     var response = await http.get(
       url,
       headers: {
